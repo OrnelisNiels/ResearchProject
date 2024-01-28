@@ -80,13 +80,13 @@ Replace `<env>` with the name of your environment. For example: `conda create
 
 Before we install the packages, I recommend you to install [CUDA toolkit](https://developer.nvidia.com/cuda-11-8-0-download-archive) and [cuDNN](https://developer.nvidia.com/cudnn) if you have a Nvidia GPU. Make sure your cuDNN version is compatible with your CUDA version. You can find the compatible versions here: [https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html](https://docs.nvidia.com/deeplearning/cudnn/support-matrix/index.html).
 
-To install the packages when using a `CPU`, run this command in your anaconda navigator.
+First run this command in your anaconda navigator.
 
 ```python
 conda install -c conda-forge ultralytics
 ```
 
-To install the packages when using a `GPU`, run this command in your anaconda navigator.
+If you are using a GPU with a CUDA env, then run the following command aswell. If not, then you can skip this line.
 
 ```python
 conda install -c pytorch -c nvidia -c conda-forge pytorch torchvision pytorch-cuda=11.8 ultralytics

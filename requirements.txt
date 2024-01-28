@@ -1,0 +1,15 @@
+tqdm
+Pillow
+autodistill
+autodistill-owlv2
+autodistill-owl-vit
+autodistill-grounded-sam 
+autodistill-yolov8
+autodistill-grounding-dino
+autodistill-sam-clip
+opencv-python
+matplotlib
+roboflow
+ipython
+gradio
+numpy

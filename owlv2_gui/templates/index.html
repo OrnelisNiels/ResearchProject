@@ -1,0 +1,171 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object Detection Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Object Detection Demo</h2>
+
+      <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="file">Choose an image:</label>
+          <input
+            type="file"
+            name="file"
+            accept=".jpg, .jpeg, .png"
+            class="form-control-file"
+          />
+        </div>
+        <div class="form-group">
+          <label for="text">Enter text prompt:</label>
+          <input type="text" name="text" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="threshold">Confidence Threshold:</label>
+          <input
+            type="number"
+            name="threshold"
+            step="0.01"
+            min="0"
+            max="1"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="nms_threshold">NMS Threshold:</label>
+          <input
+            type="number"
+            name="nms_threshold"
+            step="0.01"
+            min="0"
+            max="1"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Run Object Detection
+        </button>
+      </form>
+    </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OWLv2 Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+
+      .image-container {
+        margin-bottom: 20px;
+      }
+
+      .bounding-box {
+        position: absolute;
+        box-sizing: border-box;
+        border: 2px solid #2600ff;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>OWLv2 Demo</h2>
+
+      <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="file">Choose an image:</label>
+          <input
+            type="file"
+            name="file"
+            accept=".jpg, .jpeg, .png"
+            class="form-control-file"
+          />
+        </div>
+        <div class="form-group">
+          <label for="text">Enter text prompt:</label>
+          <input
+            type="text"
+            name="text"
+            class="form-control"
+            placeholder="E.G. fire, smoke"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="threshold">Confidence Threshold:</label>
+          <input
+            type="number"
+            name="threshold"
+            step="0.01"
+            min="0"
+            max="1"
+            value="0.1"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="nms_threshold">NMS Threshold:</label>
+          <input
+            type="number"
+            name="nms_threshold"
+            step="0.01"
+            min="0"
+            max="1"
+            value="0.1"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Run Object Detection
+        </button>
+      </form>
+
+      {% if filename %}
+      <br />
+      <div class="row image-container">
+        <div class="col-md-6">
+          <h4>Original Image</h4>
+          <img
+            src="{{ url_for('uploaded_file', filename=filename) }}"
+            class="img-fluid"
+            alt="Original Image"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <h4>Result Image</h4>
+          <img
+            src="{{ url_for('result_file', filename=filename) }}"
+            class="img-fluid"
+            alt="Result Image"
+          />
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>

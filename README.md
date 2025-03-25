@@ -30,7 +30,7 @@ If you have an Nvidia GPU: Run `run_nvidia_gpu.bat` to run ComfyUI
 
 If you don’t have an Nvidia GPU: Run `run_cpu.bat` to run ComfyUI (very slow)
 
-### (Optional) Step 4: Use a workflowa
+### (Optional) Step 4: Use a workflow
 
 For my project I used a workflow that used SDXL Turbo with DreamShaper. This gave me very good and quick results. You can download the workflow with the following link.
 
